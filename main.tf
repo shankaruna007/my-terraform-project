@@ -16,7 +16,7 @@ module "security_group" {
 
 module "ec2" {
   source            = "./modules/ec2"
-  instance_type     = "t3.micro"
+  instance_type     = "t2.micro"
   subnet_id         = module.subnet.subnet_id
   security_group_id = module.security_group.sg_id
 }
