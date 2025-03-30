@@ -4,5 +4,5 @@ subnet_cidr_block  = "10.0.1.0/24"
 availability_zone  = "us-east-1a"
 allowed_ports      = [22, 80, 443]
 allowed_cidrs      = ["0.0.0.0/0"]
-ami_id             = "ami-12345678"
-instance_type      = "t3.micro"
+ami_id             = "ami-071226ecf16aa7d96"
+instance_type      = "t2.micro"
