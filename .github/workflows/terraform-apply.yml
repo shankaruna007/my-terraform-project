@@ -3,7 +3,7 @@ name: Terraform Apply
 on:
   pull_request:
     types:
-      - closed  # Runs only when a PR is merged
+      - closed
 
 jobs:
   terraform-apply:
