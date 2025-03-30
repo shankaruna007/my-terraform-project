@@ -13,6 +13,7 @@ variable "vpc_cidr_block" {
 variable "ami_id" {
   description = "AMI ID for EC2 instance"
   type        = string
+  default     = "ami-071226ecf16aa7d96"
 }
 
 variable "instance_type" {
