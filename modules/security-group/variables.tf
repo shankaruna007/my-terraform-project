@@ -1,3 +1,8 @@
+variable "vpc_id" {
+  description = "VPC ID where the security group will be created"
+  type        = string
+}
+
 variable "allowed_ports" {
   description = "List of allowed inbound ports"
   type        = list(number)
@@ -6,9 +11,4 @@ variable "allowed_ports" {
 variable "allowed_cidrs" {
   description = "List of allowed CIDRs"
   type        = list(string)
-}
-
-variable "vpc_id" {
-  description = "ID of the VPC"
-  type        = string
 }

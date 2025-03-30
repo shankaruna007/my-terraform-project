@@ -1,10 +1,10 @@
-variable "vpc_cidr_block" {
-  description = "CIDR block for the VPC"
+variable "vpc_name" {
+  description = "Name of the VPC"
   type        = string
 }
 
-variable "vpc_name" {
-  description = "Name of the VPC"
+variable "vpc_cidr_block" {
+  description = "CIDR block for the VPC"
   type        = string
 }
 
@@ -14,7 +14,7 @@ variable "subnet_cidr_block" {
 }
 
 variable "availability_zone" {
-  description = "AWS availability zone for the subnet"
+  description = "AWS Availability Zone for the subnet"
   type        = string
 }
 
@@ -34,7 +34,7 @@ variable "ami_id" {
 }
 
 variable "instance_type" {
-  description = "Instance type for the EC2"
+  description = "Instance type for the EC2 instance"
   type        = string
-  default     = "t3.micro"
+  default     = "t2.micro"
 }
