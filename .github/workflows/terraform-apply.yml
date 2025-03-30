@@ -1,16 +1,12 @@
 name: Terraform Apply
 
 on:
-  pull_request_review:
-    types: [submitted]
-
-permissions:
-  contents: read
-  pull-requests: read
+  push:
+    branches:
+      - main
 
 jobs:
   terraform-apply:
-    if: github.event.review.state == 'approved'  # Only run if PR is approved
     runs-on: ubuntu-latest
 
     steps:
