@@ -1,9 +1,14 @@
-variable "allowed_ports" {
-  description = "List of allowed ports in the security group"
-  type        = list(number)
+variable "vpc_id" {
+  description = "VPC ID where the subnet will be created"
+  type        = string
 }
 
-variable "allowed_cidrs" {
-  description = "List of allowed CIDR blocks"
-  type        = list(string)
+variable "subnet_cidr_block" {
+  description = "CIDR block for the subnet"
+  type        = string
+}
+
+variable "availability_zone" {
+  description = "Availability zone for the subnet"
+  type        = string
 }
