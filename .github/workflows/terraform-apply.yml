@@ -1,24 +1,25 @@
 name: Terraform Apply
 
 on:
-  push:
-    branches:
-      - main
+  pull_request:
+    types:
+      - closed  # Runs only when a PR is merged
 
 jobs:
   terraform-apply:
+    if: github.event.pull_request.merged == true  # Ensures job runs only after PR is merged
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: us-east-1
+          aws-region: us-east-1  # Change this to your AWS region
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v2
