@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   terraform-apply:
-    if: github.event.review.state == 'approved'  # Only run if PR is approved
+    if: github.event.review.state == 'approved'
     name: Apply Terraform Changes
     runs-on: ubuntu-latest
 
