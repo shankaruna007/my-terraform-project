@@ -37,3 +37,8 @@ variable "instance_type" {
   description = "Instance type for the EC2"
   type        = string
 }
+
+variable "instance_name" {
+  description = "Tag name for the EC2 instance"
+  type        = string
+}

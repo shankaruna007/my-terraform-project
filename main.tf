@@ -24,4 +24,5 @@ module "ec2" {
   security_group_ids = [module.security_group.sg_id]
   ami_id             = var.ami_id
   instance_type      = var.instance_type
+  instance_name      = var.instance_name 
 }
