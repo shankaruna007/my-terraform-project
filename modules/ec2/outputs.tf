@@ -1,8 +1,4 @@
-output "instance_id" {
-  value = aws_instance.this.id
-}
-
-output "public_ip" {
-  description = "The public IP address of the instance"
-  value       = aws_instance.this.public_ip
+output "ec2_public_ip" {
+  description = "Public IP of the EC2 instance"
+  value       = module.ec2.public_ip
 }

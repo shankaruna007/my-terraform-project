@@ -7,7 +7,8 @@ resource "aws_security_group" "this" {
       from_port   = ingress.value
       to_port     = ingress.value
       protocol    = "tcp"
-      cidr_blocks = var.allowed_cidrs
+      cidr_blocks = ["0.0.0.0/0"]
+      description = "Allow port ${ingress.value}"
     }
   }
 
@@ -16,6 +17,7 @@ resource "aws_security_group" "this" {
     to_port     = 0
     protocol    = "-1"
     cidr_blocks = ["0.0.0.0/0"]
+    description = "Allow all outbound traffic"
   }
 
   tags = {
