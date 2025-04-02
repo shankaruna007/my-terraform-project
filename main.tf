@@ -4,10 +4,10 @@ module "vpc" {
 }
 
 module "subnet" {
-  source             = "./modules/subnet"
-  vpc_id             = module.vpc.vpc_id
-  subnet_cidr_block  = var.subnet_cidr_block
-  availability_zone  = var.availability_zone
+  source            = "./modules/subnet"
+  vpc_id            = module.vpc.vpc_id
+  subnet_cidr_block = var.subnet_cidr_block
+  availability_zone = var.availability_zone
 }
 
 module "security_group" {
