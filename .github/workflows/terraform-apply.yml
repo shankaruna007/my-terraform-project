@@ -27,5 +27,15 @@ jobs:
       - name: Terraform Init
         run: terraform init
 
+      - name: Terraform Lint (tf lint)
+        uses: hashicorp/terraform-ls-action@v1
+        with:
+          command: lint
+
+      - name: Run tfsec (Security Check)
+        uses: aquasecurity/tfsec-action@v1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Terraform Apply
         run: terraform apply -auto-approve
