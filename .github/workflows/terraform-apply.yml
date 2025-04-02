@@ -27,10 +27,10 @@ jobs:
       - name: Terraform Init
         run: terraform init
 
-      - name: Terraform Lint (tf lint)
-        uses: hashicorp/terraform-ls-action@v1
+      - name: Run Terraform Linter (terraform-linter)
+        uses: gngeorgiev/terraform-linter-action@v1
         with:
-          command: lint
+          github_token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Run tfsec (Security Check)
         uses: aquasecurity/tfsec-action@v1
