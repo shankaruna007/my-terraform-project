@@ -15,10 +15,6 @@ resource "aws_security_group" "this" {
     from_port   = 0
     to_port     = 0
     protocol    = "-1"
-    cidr_blocks = ["0.0.0.0/0"] #tfsec:ignore:aws-ec2-no-public-egress-sg
-  }
-
-  tags = {
-    Name = "my-security-group"
+    cidr_blocks = ["10.0.0.0/16"]
   }
 }

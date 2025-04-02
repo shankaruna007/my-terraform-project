@@ -10,7 +10,6 @@ module "subnet" {
   availability_zone  = var.availability_zone
 }
 
-
 module "security_group" {
   source        = "./modules/security-group"
   vpc_id        = module.vpc.vpc_id
@@ -24,5 +23,5 @@ module "ec2" {
   security_group_ids = [module.security_group.sg_id]
   ami_id             = var.ami_id
   instance_type      = var.instance_type
-  instance_name      = var.instance_name 
+  instance_name      = var.instance_name
 }

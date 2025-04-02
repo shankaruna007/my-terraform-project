@@ -1,20 +1,15 @@
 # Terraform AWS Infrastructure
 
-This project deploys a secure AWS environment using Terraform.
+This Terraform configuration provisions a VPC, subnet, security group, and an EC2 instance in AWS.
 
-## Modules:
-- **VPC**: Creates a VPC with CIDR block.
-- **Subnet**: Deploys a subnet in the VPC.
-- **Security Group**: Defines inbound/outbound rules.
-- **EC2 Instance**: Launches an EC2 instance with best practices.
+## Modules
+- **VPC**: Creates a VPC with a given CIDR block.
+- **Subnet**: Provisions a subnet inside the VPC.
+- **Security Group**: Manages security group rules.
+- **EC2**: Deploys an EC2 instance within the subnet and security group.
 
-## Security Features:
-✅ No open security group rules (only internal CIDR).  
-✅ IMDSv2 enforced for EC2.  
-✅ Root volume encryption enabled.  
-
-## Deployment:
+## Usage
 ```sh
 terraform init
 terraform plan
-terraform apply
+terraform apply -auto-approve
