@@ -1,15 +1,11 @@
-variable "ami_id" {
-  type = string
-}
-
-variable "instance_type" {
-  type = string
-}
-
-variable "subnet_id" {
-  type = string
-}
-
+variable "ami_id" {}
+variable "instance_type" {}
+variable "subnet_id" {}
 variable "security_group_ids" {
   type = list(string)
+}
+
+variable "instance_name" {
+  description = "Name tag for the EC2 instance"
+  type        = string
 }

@@ -1,32 +1,44 @@
 variable "aws_region" {
-  description = "AWS region to deploy resources"
+  description = "AWS region for the deployment"
   type        = string
-  default     = "us-east-1"
 }
 
-variable "vpc_cidr" {
+variable "vpc_cidr_block" {
   description = "CIDR block for the VPC"
   type        = string
 }
 
-variable "subnet_cidr" {
+variable "subnet_cidr_block" {
   description = "CIDR block for the subnet"
   type        = string
 }
 
-variable "instance_type" {
-  description = "EC2 instance type"
-  type        = string
-  default     = "t2.micro"
-}
-
-variable "ami_id" {
-  description = "AMI ID for EC2 instance"
+variable "availability_zone" {
+  description = "AWS availability zone for the subnet"
   type        = string
 }
 
 variable "allowed_ports" {
-  description = "List of allowed ports for security group"
+  description = "List of allowed inbound ports"
   type        = list(number)
-  default     = [22, 80, 443]
+}
+
+variable "allowed_cidrs" {
+  description = "List of allowed CIDRs"
+  type        = list(string)
+}
+
+variable "ami_id" {
+  description = "AMI ID for the EC2 instance"
+  type        = string
+}
+
+variable "instance_type" {
+  description = "Instance type for the EC2"
+  type        = string
+}
+
+variable "instance_name" {
+  description = "Tag name for the EC2 instance"
+  type        = string
 }
