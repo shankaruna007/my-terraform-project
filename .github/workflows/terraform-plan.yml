@@ -56,7 +56,7 @@ jobs:
         run: terraform init
 
       - name: Run tfsec (Security Check)
-        uses: aquasecurity/tfsec-action@v1
+        uses: aquasecurity/tfsec-action@v1.1.0  # Use latest version
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
