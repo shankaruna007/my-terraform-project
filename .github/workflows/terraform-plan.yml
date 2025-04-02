@@ -52,13 +52,17 @@ jobs:
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v2
 
+      - name: Install tfsec
+        run: |
+          curl -sSL https://github.com/aquasecurity/tfsec/releases/download/v1.21.0/tfsec-linux-amd64 -o tfsec
+          chmod +x tfsec
+          mv tfsec /usr/local/bin/tfsec
+
       - name: Terraform Init
         run: terraform init
 
       - name: Run tfsec (Security Check)
-        uses: aquasecurity/tfsec-action@v1.1.0  # Use latest version
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+        run: tfsec .  # Run tfsec security scan
 
   terraform-plan:
     runs-on: ubuntu-latest
