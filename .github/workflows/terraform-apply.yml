@@ -25,10 +25,7 @@ jobs:
         uses: hashicorp/setup-terraform@v2
 
       - name: Terraform Init
-        run: terraform init
+        run: terraform init -backend-config="backend-${{ matrix.environment }}.tf"
 
-      - name: Terraform Apply for Dev
-        run: terraform apply -auto-approve dev-plan.out
-
-      - name: Terraform Apply for SIT
-        run: terraform apply -auto-approve sit-plan.out
+      - name: Terraform Apply
+        run: terraform apply -auto-approve -var-file="${{ matrix.environment }}.tfvars"
