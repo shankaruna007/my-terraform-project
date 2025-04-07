@@ -8,9 +8,9 @@ on:
 jobs:
   terraform-plan:
     runs-on: ubuntu-latest
-     strategy:
+    strategy:
       matrix:
-        environment: [dev, sit]
+        environment: [dev, sit]  # Define environments
 
     steps:
       - name: Checkout repository
@@ -26,8 +26,8 @@ jobs:
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v2
 
-       - name: Terraform Init
-        run: terraform init -backend-config="backend-${{ matrix.environment }}.tf" # Dynamically load backend
+      - name: Terraform Init
+        run: terraform init -backend-config="backend-${{ matrix.environment }}.tf"
 
       - name: Terraform Plan
-        run: terraform plan -var-file="${{ matrix.environment }}.tfvars" # Use environment-specific vars
+        run: terraform plan -var-file="${{ matrix.environment }}.tfvars"
