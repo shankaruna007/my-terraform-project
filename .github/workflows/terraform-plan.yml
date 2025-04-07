@@ -26,5 +26,8 @@ jobs:
       - name: Terraform Init
         run: terraform init
 
-      - name: Terraform Plan
-        run: terraform plan
+      - name: Terraform Plan for Dev
+        run: terraform plan -var-file="dev.tfvars" -out dev-plan.out
+
+      - name: Terraform Plan for SIT
+        run: terraform plan -var-file="sit.tfvars" -out sit-plan.out
