@@ -9,6 +9,9 @@ jobs:
   terraform-apply:
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
+     strategy:
+      matrix:
+        environment: [dev, sit]
 
     steps:
       - name: Checkout repository
