@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        environment: [dev, sit] # Specify environments dynamically
+        environment: [dev, sit]  # Define environments
 
     steps:
       - name: Checkout repository
@@ -25,7 +25,7 @@ jobs:
         uses: hashicorp/setup-terraform@v2
 
       - name: Terraform Init
-        run: terraform init -backend-config="backend-${{ matrix.environment }}.tf"
+        run: terraform init -backend-config="backend-${{ matrix.environment }}.tf" # Backend for each environment
 
       - name: Terraform Destroy
-        run: terraform destroy -auto-approve -var-file="${{ matrix.environment }}.tfvars"
+        run: terraform destroy -auto-approve -var-file="${{ matrix.environment }}.tfvars" # Destroy for each environment
