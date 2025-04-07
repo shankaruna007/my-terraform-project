@@ -27,5 +27,8 @@ jobs:
       - name: Terraform Init
         run: terraform init
 
-      - name: Terraform Apply
-        run: terraform apply -auto-approve
+      - name: Terraform Apply for Dev
+        run: terraform apply -auto-approve dev-plan.out
+
+      - name: Terraform Apply for SIT
+        run: terraform apply -auto-approve sit-plan.out
