@@ -3,6 +3,5 @@ output "instance_id" {
 }
 
 output "public_ip" {
-  description = "The public IP address of the instance"
-  value       = aws_instance.this.public_ip
+  value = aws_instance.this.public_ip
 }
