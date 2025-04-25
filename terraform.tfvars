@@ -6,4 +6,4 @@ allowed_ports      = [22, 80, 443]
 allowed_cidrs      = ["0.0.0.0/0"]
 ami_id             = "ami-071226ecf16aa7d96"
 instance_type      = "t2.micro"
-instance_name      = "MyEC2Instance-new"
+instance_name      = "MyEC2Instance-new1123"
